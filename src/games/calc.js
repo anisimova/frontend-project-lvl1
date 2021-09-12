@@ -4,8 +4,8 @@ const startRandomCalc = () => {
   const taskName = 'What is the result of the expression?';
   const questionAnswerArray = [];
   for (let i = 0; i < 6; i += 2) {
-    const firstNumber = randomNumber();
-    const secondNumber = randomNumber();
+    const firstNumber = randomNumber(20);
+    const secondNumber = randomNumber(20);
     const operationsArray = ['+', '-', '*'];
     const operation = operationsArray[Math.floor(Math.random() * operationsArray.length)];
     questionAnswerArray[i] = firstNumber.toString() + operation + secondNumber.toString();

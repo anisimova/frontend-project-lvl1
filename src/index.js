@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
-const randomNumber = () => {
-  const number = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+const randomNumber = (max) => {
+  const number = Math.floor(Math.random() * max) + 1;
   return number;
 };
 

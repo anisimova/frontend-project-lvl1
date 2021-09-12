@@ -4,8 +4,8 @@ const findGCD = () => {
   const taskName = 'Find the greatest common divisor of given numbers.';
   const questionAnswerArray = [];
   for (let i = 0; i < 6; i += 2) {
-    const firstNumber = randomNumber();
-    const secondNumber = randomNumber();
+    const firstNumber = randomNumber(50);
+    const secondNumber = randomNumber(50);
     questionAnswerArray[i] = `${firstNumber}  ${secondNumber}`;
     const gcd = (a, b) => {
       if (b === 0) {
