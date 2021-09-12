@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import checkingRandomNumbers from '../src/even.js';
+import checkingRandomNumbers from '../src/games/even.js';
 
 checkingRandomNumbers();
