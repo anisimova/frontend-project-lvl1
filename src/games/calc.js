@@ -7,8 +7,9 @@ const startRandomCalc = () => {
     const firstNumber = randomNumber(20);
     const secondNumber = randomNumber(20);
     const operationsArray = ['+', '-', '*'];
+    const sp = ' ';
     const operation = operationsArray[Math.floor(Math.random() * operationsArray.length)];
-    questionAnswerArray[i] = firstNumber.toString() + operation + secondNumber.toString();
+    questionAnswerArray[i] = firstNumber.toString() + sp + operation + sp + secondNumber.toString();
     if (operation === operationsArray[0]) {
       questionAnswerArray[i + 1] = firstNumber + secondNumber;
     } if (operation === operationsArray[1]) {
