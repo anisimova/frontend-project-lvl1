@@ -6,7 +6,7 @@ const findGCD = () => {
   for (let i = 0; i < 6; i += 2) {
     const firstNumber = randomNumber(50);
     const secondNumber = randomNumber(50);
-    questionAnswerArray[i] = `${firstNumber}  ${secondNumber}`;
+    questionAnswerArray[i] = `${firstNumber} ${secondNumber}`;
     const gcd = (a, b) => {
       if (b === 0) {
         return a;
