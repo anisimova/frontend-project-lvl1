@@ -1,21 +1,24 @@
-import { base, randomNumber } from '../index.js';
+import startGame from '../index.js';
+import getRandomNumber from '../utilities.js';
+
+const gcd = (a, b) => {
+  if (b === 0) {
+    return a;
+  }
+  return gcd(b, a % b);
+};
 
 const findGCD = () => {
   const taskName = 'Find the greatest common divisor of given numbers.';
-  const questionAnswerArray = [];
-  for (let i = 0; i < 6; i += 2) {
-    const firstNumber = randomNumber(50);
-    const secondNumber = randomNumber(50);
-    questionAnswerArray[i] = `${firstNumber} ${secondNumber}`;
-    const gcd = (a, b) => {
-      if (b === 0) {
-        return a;
-      }
-      return gcd(b, a % b);
-    };
-    questionAnswerArray[i + 1] = gcd(firstNumber, secondNumber);
+  const gameData = [];
+  for (let i = 0; i < 3; i += 1) {
+    const firstNumber = getRandomNumber(1, 50);
+    const secondNumber = getRandomNumber(1, 50);
+    const question = `${firstNumber} ${secondNumber}`;
+    const answer = gcd(firstNumber, secondNumber);
+    gameData.push([question, answer]);
   }
-  base(taskName, questionAnswerArray);
+  startGame(taskName, gameData);
 };
 
 export default findGCD;
