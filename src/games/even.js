@@ -1,17 +1,17 @@
-import { base, randomNumber } from '../index.js';
+import startGame from '../index.js';
+import getRandomNumber from '../utilities.js';
+
+const isEven = (num) => num % 2 === 0;
 
 const checkingRandomNumbers = () => {
   const taskName = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const questionAnswerArray = [];
-  for (let i = 0; i < 6; i += 2) {
-    questionAnswerArray[i] = randomNumber(100);
-    if (questionAnswerArray[i] % 2 === 0) {
-      questionAnswerArray[i + 1] = 'yes';
-    } else {
-      questionAnswerArray[i + 1] = 'no';
-    }
+  const gameData = [];
+  for (let i = 0; i < 3; i += 1) {
+    const question = getRandomNumber(1, 100);
+    const answer = isEven(question) ? 'yes' : 'no';
+    gameData.push([question, answer]);
   }
-  base(taskName, questionAnswerArray);
+  startGame(taskName, gameData);
 };
 
 export default checkingRandomNumbers;
