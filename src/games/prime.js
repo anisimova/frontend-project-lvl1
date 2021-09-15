@@ -1,20 +1,24 @@
-import { base, randomNumber } from '../index.js';
+import startGame from '../index.js';
+import getRandomNumber from '../utilities.js';
+
+const isPrime = (num) => {
+  if (num === 1) return false;
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) return false;
+  }
+  return true;
+};
 
 const isPrimeNumber = () => {
   const taskName = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const questionAnswerArray = [];
-  for (let i = 0; i < 6; i += 2) {
-    const num = randomNumber(100);
-    questionAnswerArray[i] = num;
-    const isPrime = (n) => {
-      for (let k = 2; k < n; k += 1) {
-        if (num % k === 0) return 'no';
-      }
-      return 'yes';
-    };
-    questionAnswerArray[i + 1] = isPrime(num);
+  const gameData = [];
+  for (let i = 0; i < 3; i += 1) {
+    const num = getRandomNumber(1, 100);
+    const question = num;
+    const answer = isPrime(num) ? 'yes' : 'no';
+    gameData.push([question, answer]);
   }
-  base(taskName, questionAnswerArray);
+  startGame(taskName, gameData);
 };
 
 export default isPrimeNumber;
