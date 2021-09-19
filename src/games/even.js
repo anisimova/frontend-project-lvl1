@@ -3,15 +3,15 @@ import getRandomNumber from '../utilities.js';
 
 const isEven = (num) => num % 2 === 0;
 
+const getGameData = () => {
+  const question = getRandomNumber(1, 100);
+  const answer = isEven(question) ? 'yes' : 'no';
+  return [question, answer];
+};
+
 const checkingRandomNumbers = () => {
-  const taskName = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const gameData = [];
-  for (let i = 0; i < 3; i += 1) {
-    const question = getRandomNumber(1, 100);
-    const answer = isEven(question) ? 'yes' : 'no';
-    gameData.push([question, answer]);
-  }
-  startGame(taskName, gameData);
+  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+  startGame(description, getGameData);
 };
 
 export default checkingRandomNumbers;

@@ -7,7 +7,9 @@
 1. Глобально установить node.js в системе. 
 2. Локально клонировать репозиторий проекта.
 3. Установить зависимости с помощью команды * **make install** *
-4. Запустить игру через команды, описанные ниже.
+4. Провести отладку с помощью команды * **make piblish** *
+5. Установить пакеты в систему с помощью команды * **npm link** *
+6. Запустить игру через команды, описанные ниже.
 
 Список доступных игр и их команд
 --------------------
@@ -18,7 +20,7 @@
 5. Команда **brain-prime**: игра "Простое ли число?" - необходимо ответить yes, если показанное число простое, или no, если нет.
 
 ### Hexlet tests and linter status: ###
-[![Actions Status](https://github.com/anisimova/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/anisimova/frontend-project-lvl1/actions) [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability) [![hexlet-check](https://github.com/anisimova/frontend-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/anisimova/frontend-project-lvl1/actions/workflows/hexlet-check.yml)
+[![Actions Status](https://github.com/anisimova/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/anisimova/frontend-project-lvl1/actions) [![Maintainability](https://api.codeclimate.com/v1/badges/ef0f982c94bda9fcd516/maintainability)](https://codeclimate.com/github/anisimova/frontend-project-lvl1/maintainability) [![hexlet-check](https://github.com/anisimova/frontend-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/anisimova/frontend-project-lvl1/actions/workflows/hexlet-check.yml)
 
 
 ### asciinema:  ###

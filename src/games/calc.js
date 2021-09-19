@@ -1,28 +1,37 @@
 import startGame from '../index.js';
 import getRandomNumber from '../utilities.js';
 
-const getCalculation = (operation, firstNumber, secondNumber) => {
-  if (operation === '+') {
-    return firstNumber + secondNumber;
-  } if (operation === '-') {
-    return firstNumber - secondNumber;
+const calculate = (operation, firstNumber, secondNumber) => {
+  let answer = 0;
+  switch (operation) {
+    case '+':
+      answer = firstNumber + secondNumber;
+      break;
+    case '-':
+      answer = firstNumber - secondNumber;
+      break;
+    case '*':
+      answer = firstNumber * secondNumber;
+      break;
+    default:
+      answer = undefined;
   }
-  return firstNumber * secondNumber;
+  return answer;
+};
+
+const getGameData = () => {
+  const firstNumber = getRandomNumber(1, 20);
+  const secondNumber = getRandomNumber(1, 20);
+  const operators = ['+', '-', '*'];
+  const operation = operators[getRandomNumber(0, operators.length)];
+  const question = `${firstNumber} ${operation} ${secondNumber}`;
+  const answer = calculate(operation, firstNumber, secondNumber);
+  return [question, answer];
 };
 
 const startRandomCalc = () => {
-  const taskName = 'What is the result of the expression?';
-  const gameData = [];
-  for (let i = 0; i < 3; i += 1) {
-    const firstNumber = getRandomNumber(1, 20);
-    const secondNumber = getRandomNumber(1, 20);
-    const basicOperations = ['+', '-', '*'];
-    const operation = basicOperations[Math.floor(Math.random() * basicOperations.length)];
-    const question = `${firstNumber} ${operation} ${secondNumber}`;
-    const answer = getCalculation(operation, firstNumber, secondNumber);
-    gameData.push([question, answer]);
-  }
-  startGame(taskName, gameData);
+  const description = 'What is the result of the expression?';
+  startGame(description, getGameData);
 };
 
 export default startRandomCalc;
