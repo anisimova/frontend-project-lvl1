@@ -1,36 +1,32 @@
 import startGame from '../index.js';
 import getRandomNumber from '../utilities.js';
 
+const description = 'What is the result of the expression?';
+
 const calculate = (operation, firstNumber, secondNumber) => {
-  let answer = 0;
   switch (operation) {
     case '+':
-      answer = firstNumber + secondNumber;
-      break;
+      return firstNumber + secondNumber;
     case '-':
-      answer = firstNumber - secondNumber;
-      break;
+      return firstNumber - secondNumber;
     case '*':
-      answer = firstNumber * secondNumber;
-      break;
+      return firstNumber * secondNumber;
     default:
-      answer = undefined;
+      return undefined;
   }
-  return answer;
 };
 
 const getGameData = () => {
   const firstNumber = getRandomNumber(1, 20);
   const secondNumber = getRandomNumber(1, 20);
   const operators = ['+', '-', '*'];
-  const operation = operators[getRandomNumber(0, operators.length)];
+  const operation = operators[getRandomNumber(0, operators.length - 1)];
   const question = `${firstNumber} ${operation} ${secondNumber}`;
   const answer = calculate(operation, firstNumber, secondNumber);
   return [question, answer];
 };
 
 const startRandomCalc = () => {
-  const description = 'What is the result of the expression?';
   startGame(description, getGameData);
 };
 
