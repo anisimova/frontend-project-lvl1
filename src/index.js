@@ -16,11 +16,9 @@ const startGame = (description, gameData) => {
     } else {
       console.log("'%s' is wrong answer ;(. Correct answer was '%s'.", userAnswer, answer);
       console.log("Let's try again, %s!", userName);
-      return false;
     }
   }
   console.log('Congratulations, %s!', userName);
-  return true;
 };
 
 export default startGame;
